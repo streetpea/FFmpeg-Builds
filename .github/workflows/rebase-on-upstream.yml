@@ -2,7 +2,7 @@ name: Rebase on Upstream
 
 on:
   schedule:
-  - cron: "42 12 * * *"  # run every day an hour before regular build
+    - cron: "30 0 1,15 * *"
   workflow_dispatch:    # run manually
 
 jobs:

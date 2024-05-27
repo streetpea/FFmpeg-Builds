@@ -1,6 +1,9 @@
 # FFmpeg Static Auto-Builds
 
 
+Static Windows (x86_64) Builds of ffmpeg master and latest release branch **for use with [chiaki4deck](https://github.com/streetpea/chiaki4deck)**. DO NOT USE THESE BUILDS FOR REGULAR USAGE
+
+
 This repository provides static Windows (x86 and x86_64) and Linux (x86_64, arm64) Builds of [FFmpeg master](https://github.com/FFmpeg/FFmpeg) and [latest release branch](https://github.com/FFmpeg/FFmpeg/tree/release/7.1) **with some patches necessary for smooth integration with [yt-dlp](https://github.com/yt-dlp/yt-dlp)**
 
 **Note**: The builds provided are only meant to be used with yt-dlp and any unrelated issues/patches will be rejected
