@@ -2,7 +2,7 @@ name: Rebase on Upstream
 
 on:
   schedule:
-  - cron: "30 0 1,15 * *"  # run every day an hour before regular build
+  - cron: "30 0 1,15 * *"  # twice a month, an hour before the build
   workflow_dispatch:    # run manually
 
 jobs:
@@ -12,4 +12,11 @@ jobs:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
+        # The rebase force-pushes commits that change .github/workflows, which the default
+        # GITHUB_TOKEN may not do; REBASE_TOKEN needs Contents and Workflows write access.
+        token: ${{ secrets.REBASE_TOKEN }}
     - uses: yt-dlp/rebase-upstream-action@master
+      with:
+        # This repository isn't a GitHub fork, so the upstream can't be looked up
+        upstream: yt-dlp/FFmpeg-Builds
+        branch: master
